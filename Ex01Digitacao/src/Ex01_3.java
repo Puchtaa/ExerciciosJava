@@ -45,7 +45,7 @@ public class Ex01_3 {
             // cria um chutador de números e inicializa
             Random chute = new Random();
 
-            System.out.println("Seus números da Mega-Sena:");
+            System.out.println("Seus números da Mega-Sena: ");
 
             // for inteiro i começando em zero; enquanto for menor que 6 aumenta de um em um
             for (int i = 0; i < 6; i++) {
@@ -55,7 +55,7 @@ public class Ex01_3 {
             }
             System.out.print("\n"); // pula linha
         } else {
-            System.out.print("Pois é, né");
+            System.out.print("Pois é, né ");
         }
 
         // resumo
