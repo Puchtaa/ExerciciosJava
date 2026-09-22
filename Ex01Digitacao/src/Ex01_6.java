@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*-------------------------------------------------------------------
   Ex 1.6: Consumo do carro
   - informar uma quantidade inteira de quilômetros
@@ -23,6 +25,26 @@
 -------------------------------------------------------------------*/
 public class Ex01_6 {
     public static void main(String[] args) {
+        Scanner  sacanner = new Scanner(System.in);
+        int km;
+        int litros;
+        double consumo;
+
+        System.out.println("Informe quantos km percorridos: ");
+        km = sacanner.nextInt();
+
+        System.out.println("Informe a quantidade de litros abastecidos: ");
+         litros = sacanner.nextInt();
+
+        consumo = (double)
+        km / litros;
+
+        System.out.printf("Você gastou %.2f litros de combustivel por km rodado!",
+                consumo);
+
+
+
+
 
     }
 }
