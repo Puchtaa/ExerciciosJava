@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*-------------------------------------------------------------------
     Ex 2.1: Subtotal e raspadinhas
     - informar o valor da compra
@@ -16,5 +18,21 @@
 -------------------------------------------------------------------*/
 public class Ex02_1 {
         public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+
+                double valorCompra;
+                int raspadinha = 100;
+
+                System.out.println("Informe o valor da compra: ");
+                valorCompra = scanner.nextDouble();
+
+                if (valorCompra > 100){
+                        double rasp = Math.floor(valorCompra / 100.0);
+
+                        System.out.println("Ganhou "+rasp+ " raspadinhas");
+                }else {
+
+                        System.out.println("Valor menor que R$100,00 não tem direito a raspadinha!");
+                }
         }
 }
