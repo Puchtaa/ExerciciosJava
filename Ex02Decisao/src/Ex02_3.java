@@ -19,13 +19,11 @@ public class Ex02_3 {
         // gera um numero aleatorio entre 1 e 3
         Random random = new Random();
         int numeroSorteado = random.nextInt(3) + 1;
-
         // comece seu código aqui
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite um número aleatório: ");
         int numero = scanner.nextInt();
-
 
         if (numeroSorteado == numero){
             System.out.println("Parabéns, você acertou!");

@@ -26,8 +26,9 @@ public class Ex02_2 {
         String confirmaSenha = scanner.next();
 
         if (senha.equals(confirmaSenha)){
-            System.out.println("Cadastro realizado com sucesso!");
+            System.out.println("Login realizado com sucesso!");
+        }else {
+            System.out.println("As senhas não conferem!");
         }
-        System.out.println("As senhas não conferem!");
     }
 }
