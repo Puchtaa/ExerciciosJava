@@ -9,19 +9,15 @@ public class Altura {
         double somaAltura = 0.0;
         int qtdPessoas = 0;
         int qtdAltos = 0;
+        double somaAltos = 0;
 
         do {
             System.out.print("Qual sua altura? ");
             altura = scanner.nextDouble();
 
             if (altura >1.80){
-                qtdAltos += altura;
-                qtdAltos++;}
-
-            if (qtdAltos>0){
-                double mediaAltos = somaAltura / qtdAltos;
-                System.out.printf("A média de altura das pessoas altas é: %.2f", mediaAltos);
-            }
+                qtdAltos++;
+                qtdAltos += altura;}
 
             somaAltura += altura;
             qtdPessoas++;
@@ -34,6 +30,11 @@ public class Altura {
         double mediaFinal = somaAltura / qtdPessoas;
 
         System.out.printf("A media da altura das %d pessoas é %.2f" ,qtdPessoas, mediaFinal);
+
+        if (qtdAltos>0){
+            double mediaAltos = somaAltos / qtdAltos;
+            System.out.printf("A média de altura das pessoas altas é: %.2f", mediaAltos);
+        }
 
 
     }
