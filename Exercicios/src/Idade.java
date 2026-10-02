@@ -1,13 +1,15 @@
 import java.util.Scanner;
 
-public class Altura {
+public class Idade {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int somaIdadeEstudante = 0;
         int qtdEstudante = 0;
+
         int somaIdadeNaoEstudante = 0;
         int qtdNaoEstudante = 0;
+
         String continuar;
 
         do {
@@ -24,22 +26,21 @@ public class Altura {
                 somaIdadeNaoEstudante += idade;
                 qtdNaoEstudante++;
             }
+
             System.out.print("Deseja cadastrar outra pessoa? (S/N): ");
             continuar = scanner.next();
 
         } while (continuar.equalsIgnoreCase("s"));
 
         if (qtdEstudante > 0) {
-            int mediaEstudante = somaIdadeEstudante / qtdEstudante;
-            System.out.printf("Média de idade dos estudantes: %d anos (%d cadastrados)\n",
-                    mediaEstudante, qtdEstudante);
+            double mediaEstudante = (double) somaIdadeEstudante / qtdEstudante;
+            System.out.printf("Média de idade dos estudantes: %.0f anos (%d cadastrados)\n", mediaEstudante, qtdEstudante);
         }
+
         if (qtdNaoEstudante > 0) {
-            int mediaNaoEstudante = somaIdadeNaoEstudante / qtdNaoEstudante;
-            System.out.printf("\nMédia de idade dos não estudantes: %d anos (%d cadastrados)",
-                    mediaNaoEstudante, qtdNaoEstudante);
+            double mediaNaoEstudante = (double) somaIdadeNaoEstudante / qtdNaoEstudante;
+            System.out.printf("Média de idade dos não estudantes: %.2f anos (%d cadastrados)\n", mediaNaoEstudante, qtdNaoEstudante);
         }
 
     }
 }
-
