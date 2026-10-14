@@ -1,45 +1,38 @@
 import java.util.Scanner;
 
-public class Altura {
+public class Prog02b {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
 
-        int somaIdadeEstudante = 0;
-        int qtdEstudante = 0;
-        int somaIdadeNaoEstudante = 0;
-        int qtdNaoEstudante = 0;
-        String continuar;
+        final int MAX_PESSOAS = 5;
 
+        double[] altura = new double[MAX_PESSOAS];
+        int contador = 0;
+        String mais = "";
         do {
-            System.out.print("Informe sua idade: ");
-            int idade = scanner.nextInt();
-
-            System.out.print("É estudante? (S/N): ");
-            String eEstudante = scanner.next();
-
-            if (eEstudante.equalsIgnoreCase("s")) {
-                somaIdadeEstudante += idade;
-                qtdEstudante++;
-            } else {
-                somaIdadeNaoEstudante += idade;
-                qtdNaoEstudante++;
+            System.out.print("Digite a altura: ");
+            altura[contador] = entrada.nextDouble();
+            contador++;
+            if (contador < MAX_PESSOAS) {
+                System.out.print("Tem mais (S/N)? ");
+                mais = entrada.next();
             }
-            System.out.print("Deseja cadastrar outra pessoa? (S/N): ");
-            continuar = scanner.next();
+        } while (contador < MAX_PESSOAS && mais.equalsIgnoreCase("s"));
 
-        } while (continuar.equalsIgnoreCase("s"));
-
-        if (qtdEstudante > 0) {
-            int mediaEstudante = somaIdadeEstudante / qtdEstudante;
-            System.out.printf("Média de idade dos estudantes: %d anos (%d cadastrados)\n",
-                    mediaEstudante, qtdEstudante);
-        }
-        if (qtdNaoEstudante > 0) {
-            int mediaNaoEstudante = somaIdadeNaoEstudante / qtdNaoEstudante;
-            System.out.printf("\nMédia de idade dos não estudantes: %d anos (%d cadastrados)",
-                    mediaNaoEstudante, qtdNaoEstudante);
+        double soma = 0;
+        for (int i = 0; i < MAX_PESSOAS; i++) {
+            soma += altura[i];
         }
 
+        double media = soma / contador;
+        System.out.printf("\nA média de %d pessoas é %.2fm\n",
+                contador, media);
+
+        System.out.print("Alturas abaixo da média:");
+        for (int i = 0; i < MAX_PESSOAS; i++) {
+            if (altura[i] < media) {
+                System.out.printf("%.2f ", altura[i]);
+            }
+        }
     }
 }
-
