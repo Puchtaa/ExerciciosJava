@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Prog02b {
+public class Altura {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
