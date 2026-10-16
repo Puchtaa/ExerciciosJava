@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ExVetor3 {
-    static void main() {
+    public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int produto;
         int quant;
