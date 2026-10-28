@@ -3,33 +3,52 @@ import java.util.Scanner;
 public class ChuteCores {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         String[] cores = {
-                "vermelho", "laranja", "amarelo", "verde", "azul", "anil", "violeta" };
+                "Vermelho", "Laranja", "Amarelo",
+                "Verde", "Azul", "Anil", "Violeta"
+        };
 
-        int acertos=0, erros=0;
-        String chutes=" ";
+        boolean[] acertadas = new boolean[cores.length];
 
-        while (true){
-            System.out.println("Diga uma cor (digite \"desisto\" para sair: )");
-            chutes =
+        int acertos = 0;
+        int erros = 0;
 
+        while (acertos < 7) {
+            System.out.print("Digite uma cor ou 'sair': ");
+            String resposta = scanner.nextLine();
 
-
-
-            if (acertos==7){
-                System.out.println("Parabéns!");
+            if (resposta.equalsIgnoreCase("sair")) {
                 break;
             }
-            if (erros == 99){
-                System.out.println("Admiro sua persistência mas quero ir dormir!");
-                break;
+
+            int indice = -1;
+
+            for (int i = 0; i < cores.length; i++) {
+                if (resposta.equalsIgnoreCase(cores[i])) {
+                    indice = i;
+                }
             }
-            if (chutes.equalsIgnoreCase("Desisto")){
-                System.out.println("Boa sorte na proxima vez!");
-                break;
+
+            if (indice == -1) {
+                erros++;
+                System.out.println("Cor incorreta!");
+            } else if (acertadas[indice]) {
+                System.out.println("Você já acertou essa cor!");
+            } else {
+                acertadas[indice] = true;
+                acertos++;
+                System.out.println("Acertou!");
             }
+
+            System.out.println("Acertos: " + acertos);
+            System.out.println("Erros: " + erros);
         }
 
+        System.out.println("Fim do jogo!");
+        System.out.println("Acertos: " + acertos);
+        System.out.println("Erros: " + erros);
 
+        scanner.close();
     }
 }
